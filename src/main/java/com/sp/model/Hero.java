@@ -10,20 +10,36 @@ public class Hero {
     @GeneratedValue
     private Integer id;
     private String name;
-    private String superPowerName;
-    private int superPowerValue;
+
+    private String description;
+    private int hp;
+
+    private int attack;
+
+    private int defense;
+
+    private int energy;
     private String imgUrl;
 
     public Hero() {
     }
 
-    public Hero(int id,String name, String superPowerName, int superPowerValue, String imgUrl) {
-        super();
-        this.id=id;
+    public Hero(String name, String description, String imgUrl, int hp, int attack, int defense, int energy) {
         this.name = name;
-        this.superPowerName = superPowerName;
-        this.superPowerValue = superPowerValue;
+        this.description = description;
+        this.hp = hp;
+        this.attack = attack;
+        this.defense = defense;
+        this.energy = energy;
         this.imgUrl = imgUrl;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -34,20 +50,12 @@ public class Hero {
         this.name = name;
     }
 
-    public String getSuperPowerName() {
-        return superPowerName;
+    public int getHp() {
+        return hp;
     }
 
-    public void setSuperPowerName(String superPowerName) {
-        this.superPowerName = superPowerName;
-    }
-
-    public int getSuperPowerValue() {
-        return superPowerValue;
-    }
-
-    public void setSuperPowerValue(int superPowerValue) {
-        this.superPowerValue = superPowerValue;
+    public void setHp(int hp) {
+        this.hp = hp;
     }
 
     public String getImgUrl() {
@@ -58,17 +66,50 @@ public class Hero {
         this.imgUrl = imgUrl;
     }
 
-    public int getId() {
-        return id;
+    public String getDescription() {
+        return description;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    public int getEnergy() {
+        return energy;
+    }
+
+    public void setEnergy(int energy) {
+        this.energy = energy;
     }
 
     @Override
     public String toString() {
-        return "HERO ["+this.id+"]: name:"+this.name+", superPowerName:"+this.superPowerName+", superPowerValue:"+this.superPowerValue+" imgUrl:"+this.imgUrl;
+        return "Hero{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", hp=" + hp +
+                ", attack=" + attack +
+                ", defense=" + defense +
+                ", energy=" + energy +
+                ", imgUrl='" + imgUrl + '\'' +
+                '}';
     }
 }
 

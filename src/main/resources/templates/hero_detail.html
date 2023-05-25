@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Card Detail</title>
+</head>
+<body>
+    <h1 th:utext="${hero.name}"></h1>
+    <img th:src="${hero.imgUrl}" alt="Hero image" />
+    <p>Description :</p>
+    <p th:utext="${hero.description}"></p>
+    <p>Hp :</p>
+    <p th:utext="${hero.hp}"></p>
+    <p>Energy :</p>
+    <p th:utext="${hero.energy}"></p>
+    <p>Attack :</p>
+    <p th:utext="${hero.attack}"></p>
+    <p>Defense :</p>
+    <p th:utext="${hero.defense}"></p>
+</body>
+</html>

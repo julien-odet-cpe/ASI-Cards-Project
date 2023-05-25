@@ -12,9 +12,8 @@ import com.sp.repository.HeroRepository;
 public class HeroService {
     @Autowired
     HeroRepository hRepository;
-    public void addHero(Hero h) {
-        Hero createdHero=hRepository.save(h);
-        System.out.println(createdHero);
+    public Hero addHero(Hero h) {
+        return hRepository.save(h);
     }
 
     public Hero getHero(int id) {
