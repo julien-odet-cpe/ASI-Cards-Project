@@ -1,60 +1,58 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="UTF-8" />
     <title>Create Hero</title>
 </head>
 <body>
-<form th:action="@{/create-hero}"
-      th:object="${heroForm}" method="POST">
-    <fieldset >
+<form method="POST">
+    <fieldset>
         <legend >Create your hero card ! </legend>
         <div >
             <label for="form-name">Name</label>
             <div >
                 <input id="form-name" type="text"
-                       placeholder="Hero name..." th:field="*{name}">
+                       placeholder="Hero name...">
             </div>
         </div>
         <div >
             <label  for="form-description">Description</label>
             <div >
                 <input  id="form-description" type="text"
-                        placeholder="Hero description..." th:field="*{description}">
+                        placeholder="Hero description...">
             </div>
             <label  for="form-imgUrl">Image URL</label>
             <div >
                 <input  id="form-imgUrl" type="text"
-                        placeholder="Hero super power..." th:field="*{imgUrl}">
+                        placeholder="Hero super power...">
             </div>
             <label  for="form-hp">Hp</label>
             <div>
                 <input id="form-hp" type="number"
-                       placeholder="Hero hp..." th:field="*{hp}">
+                       placeholder="Hero hp...">
             </div>
             <label  for="form-energy">Energy</label>
             <div>
                 <input id="form-energy" type="number"
-                       placeholder="Hero energy..." th:field="*{energy}">
+                       placeholder="Hero energy...">
             </div>
             <label  for="form-attack">Attack</label>
             <div>
                 <input id="form-attack" type="number"
-                       placeholder="Hero attack..." th:field="*{attack}">
+                       placeholder="Hero attack...">
             </div>
             <label  for="form-defense">Defense</label>
             <div>
                 <input id="form-defense" type="number"
-                       placeholder="Hero defense..." th:field="*{defense}">
+                       placeholder="Hero defense...">
             </div>
         </div>
         <div >
-            <input type="submit"  class="uk-button uk-button-default" value="Create" />
+            <input type="button" class="uk-button uk-button-default" value="Create" onclick="createHero()"/>
         </div>
-
     </fieldset>
 </form>
-
+<script src="hero-create.js" type="application/javascript"></script>
 </body>
 
 </html>

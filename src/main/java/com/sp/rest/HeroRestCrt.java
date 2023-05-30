@@ -10,12 +10,12 @@ public class HeroRestCrt {
     @Autowired
     HeroService hService;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/hero")
-    public void addHero(@RequestBody Hero hero) {
-        hService.addHero(hero);
+    @RequestMapping(method = RequestMethod.POST, value = "/hero-rest")
+    public Hero addHero(@RequestBody Hero hero) {
+        return hService.addHero(hero);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/hero/{id}")
+    @RequestMapping(method = RequestMethod.GET, value = "/hero-rest/{id}")
     public Hero getHero(@PathVariable String id) {
         Hero h = hService.getHero(Integer.valueOf(id));
         return h;
