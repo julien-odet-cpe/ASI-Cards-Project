@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link href="login.css" rel="stylesheet"/>
 </head>
 <body>
 <form>
-    <label>Surname</label>
-    <input id="surname" name="surname" type="text">
-    <label>Password</label>
-    <input id="pwd" name="pwd" type="password">
-    <input type="submit" value="Connect">
-    <input type="submit" value="Cancel">
+    <fieldset>
+        <legend>Login</legend>
+        <label for="surname">Surname</label>
+        <input id="surname" name="surname" type="text"><br><br>
+        <label for="pwd">Password</label>
+        <input id="pwd" name="pwd" type="password"><br><br>
+        <input class="button" type="submit" value="Connect">
+    </fieldset>
 </form>
 </body>
 </html>
