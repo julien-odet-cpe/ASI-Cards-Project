@@ -79,5 +79,5 @@ function handleRowClick(hero) {
     document.getElementById("attack").innerHTML = hero.attack;
     document.getElementById("defense").innerHTML = hero.defense;
     document.getElementById("energy").innerHTML = hero.energy;
-    document.getElementById("image").src = hero.image;
+    document.getElementById("image").src = hero.imgUrl;
 }
