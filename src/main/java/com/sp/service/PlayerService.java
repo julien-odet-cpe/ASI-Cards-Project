@@ -12,6 +12,7 @@ public class PlayerService {
 
     public Player addPlayer(Player p) {
         p.setUsername(p.getUsername().toLowerCase());
+        p.setMoney(500);
         return pRepository.save(p);
     }
 

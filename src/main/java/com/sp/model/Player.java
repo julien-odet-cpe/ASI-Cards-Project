@@ -16,13 +16,14 @@ public class Player {
 
     private String surname;
 
+    private float money;
+
     public Player() {
     }
 
     public Player(String username, String password) {
         this.username = username;
         this.password = password;
-        this.surname = "";
     }
 
     public Integer getId() {
@@ -31,6 +32,14 @@ public class Player {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public float getMoney() {
+        return money;
+    }
+
+    public void setMoney(float money) {
+        this.money = money;
     }
 
     public String getUsername() {
