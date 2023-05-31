@@ -22,12 +22,23 @@ let onLogin = () => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
-    }).then(response => {
-        response.json().then(data => {
-            if(data != null && data.id != null){
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not OK.");
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data != null && data.id != null) {
                 document.cookie = "userId=" + data.id + ";path=/";
                 window.location = "http://localhost:8080/home.html";
+            } else {
+                alert("Invalid credentials !");
             }
+        })
+        .catch(error => {
+            alert("Invalid credentials !");
         });
-    });
+
 }
