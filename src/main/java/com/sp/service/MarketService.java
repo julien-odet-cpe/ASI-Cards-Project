@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 @Service
 public class MarketService {
@@ -34,5 +36,25 @@ public class MarketService {
 
     public void deleteMarket(Integer id) {
         mRepository.deleteById(id);
+    }
+
+    public Iterable<Market> getOpenMarket() {
+        List<Market> markets = new LinkedList<Market>();
+        for (Market m : mRepository.findAll()) {
+            if (m.getBuyerId() == null) {
+                markets.add(m);
+            }
+        }
+        return markets;
+    }
+
+    public Iterable<Market> getOpenMarketBySellerId(Integer sellerId) {
+        List<Market> markets = new LinkedList<Market>();
+        for (Market m : mRepository.findBySellerId(sellerId)) {
+            if (m.getBuyerId() != null) {
+                markets.add(m);
+            }
+        }
+        return markets;
     }
 }

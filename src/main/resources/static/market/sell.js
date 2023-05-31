@@ -72,5 +72,12 @@ function populateTable(data) {
 }
 
 function handleRowClick(hero) {
-  console.log("Clicked hero:", hero);
+    document.getElementById("right-side-div").style.display = "flex";
+    document.getElementById("name").innerHTML = hero.name;
+    document.getElementById("description").innerHTML = hero.description;
+    document.getElementById("hp").innerHTML = hero.hp;
+    document.getElementById("attack").innerHTML = hero.attack;
+    document.getElementById("defense").innerHTML = hero.defense;
+    document.getElementById("energy").innerHTML = hero.energy;
+    document.getElementById("image").src = hero.image;
 }
