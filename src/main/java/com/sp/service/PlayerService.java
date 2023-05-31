@@ -11,6 +11,7 @@ public class PlayerService {
     PlayerRepository pRepository;
 
     public Player addPlayer(Player p) {
+        p.setUsername(p.getUsername().toLowerCase());
         return pRepository.save(p);
     }
 
@@ -19,6 +20,6 @@ public class PlayerService {
     }
 
     public Player login(String username, String password) {
-        return pRepository.findByUsernameAndPassword(username, password);
+        return pRepository.findByUsernameAndPassword(username.toLowerCase(), password);
     }
 }

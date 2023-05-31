@@ -1,5 +1,7 @@
 package com.sp.model;
 
+import com.sp.dto.HeroCreateDto;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -21,7 +23,20 @@ public class Hero {
     private int energy;
     private String imgUrl;
 
+    private Integer playerId;
+
     public Hero() {
+    }
+
+    public Hero(HeroCreateDto heroCreateDto){
+        this.name = heroCreateDto.name;
+        this.description = heroCreateDto.description;
+        this.hp = heroCreateDto.hp;
+        this.attack = heroCreateDto.attack;
+        this.defense = heroCreateDto.defense;
+        this.energy = heroCreateDto.energy;
+        this.imgUrl = heroCreateDto.imgUrl;
+        this.playerId = heroCreateDto.playerId;
     }
 
     public Hero(String name, String description, String imgUrl, int hp, int attack, int defense, int energy) {
@@ -56,6 +71,14 @@ public class Hero {
 
     public void setHp(int hp) {
         this.hp = hp;
+    }
+
+    public Integer getPlayerId() {
+        return playerId;
+    }
+
+    public void setPlayerId(Integer playerId) {
+        this.playerId = playerId;
     }
 
     public String getImgUrl() {

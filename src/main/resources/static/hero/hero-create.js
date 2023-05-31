@@ -1,17 +1,27 @@
+if(document.cookie.indexOf("userId") === -1){
+    document.location = "http://localhost:8080/";
+}
+
 let createHero = function () {
-    console.log("createHero");
-    const name = document.getElementById("form-name").value;
-    const description = document.getElementById("form-description").value;
-    const imgUrl = document.getElementById("form-imgUrl").value;
-    const hp = document.getElementById("form-hp").value;
-    const energy = document.getElementById("form-energy").value;
-    const attack = document.getElementById("form-attack").value;
-    const defense = document.getElementById("form-defense").value;
+    const name = document.getElementById("form-name")?.value;
+    const description = document.getElementById("form-description")?.value;
+    const imgUrl = document.getElementById("form-imgUrl")?.value;
+    const hp = document.getElementById("form-hp")?.value;
+    const energy = document.getElementById("form-energy")?.value;
+    const attack = document.getElementById("form-attack")?.value;
+    const defense = document.getElementById("form-defense")?.value;
     if (name === "" || description === "" || imgUrl === "" || hp === "" || energy === "" || attack === "" || defense === "") {
         alert("Please fill in all fields");
-        console.log('EKIP')
         return;
     }
+
+    const userId = +document.cookie.split("=")[1];
+
+    if(userId == null){
+        alert("Please login first!");
+        return;
+    }
+
     const hero = {
         name: name,
         description: description,
@@ -19,7 +29,8 @@ let createHero = function () {
         hp: hp,
         energy: energy,
         attack: attack,
-        defense: defense
+        defense: defense,
+        playerId: userId
     };
 
     fetch("http://localhost:8080/hero-rest", {

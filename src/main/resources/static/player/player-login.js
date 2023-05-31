@@ -25,7 +25,7 @@ let onLogin = () => {
     }).then(response => {
         response.json().then(data => {
             if(data != null && data.id != null){
-                document.cookie = "userId=" + data.id + data.username + ";path=/";
+                document.cookie = "userId=" + data.id + ";path=/";
                 window.location = "http://localhost:8080/home.html";
             }
         });

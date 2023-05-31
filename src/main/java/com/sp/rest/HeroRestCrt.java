@@ -1,5 +1,6 @@
 package com.sp.rest;
 
+import com.sp.dto.HeroCreateDto;
 import com.sp.model.Hero;
 import com.sp.service.HeroService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,8 @@ public class HeroRestCrt {
     HeroService hService;
 
     @RequestMapping(method = RequestMethod.POST, value = "/hero-rest")
-    public Hero addHero(@RequestBody Hero hero) {
-        return hService.addHero(hero);
+    public Hero addHero(@RequestBody HeroCreateDto heroCreateDto) {
+        return hService.addHero(heroCreateDto);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/hero-rest/{id}")
