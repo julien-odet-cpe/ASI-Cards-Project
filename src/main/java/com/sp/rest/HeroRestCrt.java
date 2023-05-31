@@ -16,6 +16,11 @@ public class HeroRestCrt {
         return hService.addHero(heroCreateDto);
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/hero-rest/player/{playerId}")
+    public Iterable<Hero> getHeroesByPlayerId(@PathVariable String playerId) {
+        return hService.findByPlayerId(Integer.valueOf(playerId));
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = "/hero-rest/{id}")
     public Hero getHero(@PathVariable String id) {
         Hero h = hService.getHero(Integer.valueOf(id));

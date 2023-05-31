@@ -1,5 +1,6 @@
 package com.sp.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.sp.dto.HeroCreateDto;
@@ -21,6 +22,10 @@ public class HeroService {
     public Hero getHero(int id) {
         Optional<Hero> hOpt =hRepository.findById(id);
         return hOpt.orElse(null);
+    }
+
+    public List<Hero> findByPlayerId(Integer playerId) {
+        return hRepository.findByPlayerId(playerId);
     }
 
 }

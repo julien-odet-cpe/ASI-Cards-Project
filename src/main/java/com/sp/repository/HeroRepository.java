@@ -6,5 +6,5 @@ import com.sp.model.Hero;
 
 public interface HeroRepository extends CrudRepository<Hero, Integer> {
 
-    public List<Hero> findByName(String name);
+    public List<Hero> findByPlayerId(Integer playerId);
 }
