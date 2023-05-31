@@ -38,6 +38,10 @@ body {
     font-style: italic;
 }
 
+.clickable{
+    cursor: pointer;
+}
+
 /* BODY */
 
 .container {

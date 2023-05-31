@@ -18,5 +18,4 @@ let getHero = function () {
     })
 }
 
-console.log('SISI')
 getHero();
