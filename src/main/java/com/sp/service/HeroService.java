@@ -24,6 +24,10 @@ public class HeroService {
         return hOpt.orElse(null);
     }
 
+    public Hero updateHero(Hero h) {
+        return hRepository.save(h);
+    }
+
     public List<Hero> findByPlayerId(Integer playerId) {
         return hRepository.findByPlayerId(playerId);
     }

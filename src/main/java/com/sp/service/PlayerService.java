@@ -20,6 +20,9 @@ public class PlayerService {
         return pRepository.findById(id);
     }
 
+    public Player updatePlayer(Player p) {
+        return pRepository.save(p);
+    }
     public Player login(String username, String password) {
         return pRepository.findByUsernameAndPassword(username.toLowerCase(), password);
     }

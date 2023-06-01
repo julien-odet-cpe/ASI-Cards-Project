@@ -1,5 +1,6 @@
 package com.sp.rest;
 
+import com.sp.dto.MarketHeroDto;
 import com.sp.model.Market;
 import com.sp.service.MarketService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class MarketRestCrt {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/market-rest")
-    public Iterable<Market> getAllMarket() {
+    public Iterable<MarketHeroDto> getAllMarket() {
         return mService.getOpenMarket();
     }
 
@@ -40,8 +41,9 @@ public class MarketRestCrt {
         mService.getMarket(Integer.valueOf(id));
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/market-rest/{id}/{buyerId}")
-    public void buyMarket(@PathVariable String id, @PathVariable String buyerId) {
-        mService.buyMarket(Integer.valueOf(id), Integer.valueOf(buyerId));
+    @RequestMapping(method = RequestMethod.PUT, value = "/market-rest/buy/{id}")
+    public void buyMarket(@RequestBody MarketHeroDto marketHeroDto,
+                          @PathVariable String id) {
+        mService.buyMarket(marketHeroDto, Integer.valueOf(id));
     }
 }
