@@ -15,7 +15,8 @@ public class MarketService {
     MarketRepository mRepository;
 
     public Market addMarket(Market m) {
-        return mRepository.save(m);
+        Market newMarket = new Market(m.getHeroId(), m.getSellerId(), m.getPrice());
+        return mRepository.save(newMarket);
     }
 
     public Market getMarket(Integer id) {
@@ -38,6 +39,11 @@ public class MarketService {
         mRepository.deleteById(id);
     }
 
+    public void deleteMarketByHeroId(Integer heroId) {
+        Market m = mRepository.findByHeroId(heroId);
+        mRepository.deleteById(m.getId());
+    }
+
     public Iterable<Market> getOpenMarket() {
         List<Market> markets = new LinkedList<Market>();
         for (Market m : mRepository.findAll()) {
@@ -50,8 +56,9 @@ public class MarketService {
 
     public Iterable<Market> getOpenMarketBySellerId(Integer sellerId) {
         List<Market> markets = new LinkedList<Market>();
-        for (Market m : mRepository.findBySellerId(sellerId)) {
-            if (m.getBuyerId() != null) {
+        Iterable<Market> mA = mRepository.findBySellerId(sellerId);
+        for (Market m : mA) {
+            if (m.getBuyerId() == null) {
                 markets.add(m);
             }
         }

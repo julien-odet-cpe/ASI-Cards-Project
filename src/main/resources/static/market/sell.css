@@ -97,8 +97,16 @@ body {
 
 .right-side{
     width: 35%;
-    padding-top: 5%;
     display: none;
+    flex-direction: column;
+}
+
+.sell-cancel-bt{
+    padding: 5px;
+    margin: 10px auto;
+    background-color: azure;
+    min-width: 50%;
+    cursor: pointer;
 }
 
 .card {
