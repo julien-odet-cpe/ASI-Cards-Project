@@ -30,5 +30,5 @@ function redirectToSell() {
 }
 
 function redirectToGame() {
-    window.location.href = "player/create.html";
+    window.location.href = "game/game.html";
 }
