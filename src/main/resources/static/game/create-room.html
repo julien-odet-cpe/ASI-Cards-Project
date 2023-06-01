@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Game</title>
+    <link href="game.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<header class="header-bar">
+    <div class="left-corner">
+        <span class="amount" id="money"></span>
+    </div>
+    <div class="center-text">
+        <span class="midText" id="midText">Create Room</span>
+    </div>
+    <div class="right-corner">
+        <i aria-hidden="true" class="fa fa-user user-icon"></i>
+        <span class="username" id="surname"></span>
+        <i aria-hidden="true" class="fa fa-sign-out signout-icon clickable" onclick="logout()"></i>
+    </div>
+</header>
+<div class="main">
+    <form>
+        <fieldset>
+            <legend>Room Creation</legend>
+            <label for="form-room-name">Room Name</label>
+            <input id="form-room-name" name="room-name" placeholder="Room name..." type="text"><br><br>
+            <label for="form-bet">Bet</label>
+            <input id="form-bet" name="bet" placeholder="bet ..." type="text"><br><br>
+            <input class="button" onclick="redirectToWaitingRoom()" type="button" value="Create"/>
+            <input class="button" onclick="redirectToGame()" type="button" value="Cancel"/>
+        </fieldset>
+    </form>
+</div>
+<script src="game.js" type="application/javascript"></script>
+
+</body>
+</html>

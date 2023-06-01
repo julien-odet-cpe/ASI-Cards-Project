@@ -13,8 +13,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
     width: 100%;
     margin-bottom: 20px;
+}
+
+.waiting-container-ext {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Autres styles */
+}
+
+.waiting-container-int {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Autres styles */
 }
 
 .left-corner {
@@ -56,14 +74,14 @@ body {
 }
 
 /* BODY */
-#heroTable {
+#gameTable {
     margin-left: 40px;
     width: 90%;
     border-collapse: collapse;
     border: 1px solid black;
 }
 
-#heroTable th {
+#gameTable th {
     background-color: lightgrey;
     color: black;
     font-weight: bold;
@@ -73,13 +91,13 @@ body {
     border: 1px solid black;
 }
 
-#heroTable td {
+#gameTable td {
     text-align: center;
     padding: 8px;
     border: 1px solid black;
 }
 
-.market {
+.myRoomList {
     font-size: 20px;
     font-weight: bold;
     margin-left: 40px;
@@ -89,6 +107,7 @@ body {
 .main{
     display: flex;
     flex-direction: row;
+
 }
 
 .left-side{
@@ -126,28 +145,3 @@ p {
     margin-bottom: 5px;
 }
 
-.description {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.stat {
-    display: flex;
-    justify-content: space-between;
-}
-
-.stat p {
-    margin-right: 10px;
-}
-
-#description {
-    font-style: italic;
-}
-
-#hp,
-#energy,
-#attack,
-#defense {
-    font-weight: bold;
-}
