@@ -11,18 +11,28 @@ public class MarketRestCrt {
     MarketService mService;
 
     @RequestMapping(method = RequestMethod.POST, value = "/market-rest")
-    public void addMarket(@RequestBody Market market) {
-        mService.addMarket(market);
+    public Market addMarket(@RequestBody Market market) {
+        return mService.addMarket(market);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/market-rest")
     public Iterable<Market> getAllMarket() {
-        return mService.getAllMarket();
+        return mService.getOpenMarket();
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/market-rest/{id}")
-    public void deleteMarket(@RequestBody Integer id) {
+    public void deleteMarket(@PathVariable Integer id) {
         mService.deleteMarket(id);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/market-rest/hero/{id}")
+    public void deleteMarketByHeroId(@PathVariable String id) {
+        mService.deleteMarketByHeroId(Integer.parseInt(id));
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/market-rest/seller/{id}")
+    public Iterable<Market> getOpenMarketBySellerId(@PathVariable String id) {
+        return mService.getOpenMarketBySellerId(Integer.valueOf(id));
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/market-rest/{id}")
