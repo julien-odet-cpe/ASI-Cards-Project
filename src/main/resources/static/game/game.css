@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* HEADER */
+.header-bar {
+    background-color: #f2f2f2;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.waiting-container-ext {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Autres styles */
+}
+
+.waiting-container-int {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Autres styles */
+}
+
+.left-corner {
+    flex: 1;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.center-text {
+    flex: 1;
+    text-align: center;
+    font-size: 50px;
+}
+
+.right-corner {
+    flex: 1;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.amount {
+    font-weight: bold;
+}
+
+.username {
+    font-style: italic;
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+.user-icon {
+    margin-right: 5px;
+}
+
+.signout-icon {
+    margin-left: 15px;
+}
+
+/* BODY */
+#gameTable {
+    margin-left: 40px;
+    width: 90%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+#gameTable th {
+    background-color: lightgrey;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid black;
+}
+
+#gameTable td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid black;
+}
+
+.myRoomList {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.left-side{
+    width: 65%;
+}
+
+.right-side{
+    width: 35%;
+    padding-top: 5%;
+    display: none;
+}
+
+.card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
