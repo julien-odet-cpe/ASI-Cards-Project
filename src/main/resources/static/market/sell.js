@@ -4,22 +4,6 @@ if (document.cookie.indexOf("userId") === -1) {
 
 let user;
 
-fetch("http://localhost:8080/player-rest/" + document.cookie.split("=")[1])
-    .then((response) => response.json()
-        .then((data) => {
-            if(data === null || data.id === null){
-                return;
-            }
-            document.getElementById("money").innerHTML = data.money;
-            document.getElementById("surname").innerHTML = data.surname;
-            user = data;
-        }))
-
-let logout = () => {
-    document.cookie = 'userId=; Max-Age=0'
-    document.location = "http://localhost:8080/";
-};
-
 const userId = +document.cookie.split("=")[1];
 
 fetch("http://localhost:8080/market-rest/seller/" + userId)
