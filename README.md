@@ -7,4 +7,8 @@
 - Valentin FOEX
 
 ### Éléments réalisés du cahier des charges
-Nous avons réalisés l'ensemble des éléments du cahier des charges
+Nous avons réalisés l'ensemble des éléments du cahier des charges :
+- Création d’utilisateur et connexion
+- Achat/vente de cartessur la plateforme
+
+Notre application est fonctionnelle et respecte les standards FULL REST.
