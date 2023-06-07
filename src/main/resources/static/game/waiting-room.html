@@ -5,21 +5,17 @@
     <title>Game</title>
     <link href="game.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#includedContent").load("../header.html");
+        });
+    </script>
 </head>
 <body>
-<header class="header-bar">
-    <div class="left-corner">
-        <span class="amount" id="money"></span>
-    </div>
-    <div class="center-text">
-        <span class="midText" id="midText">Waiting Room</span>
-    </div>
-    <div class="right-corner">
-        <i aria-hidden="true" class="fa fa-user user-icon"></i>
-        <span class="username" id="surname"></span>
-        <i aria-hidden="true" class="fa fa-sign-out signout-icon clickable" onclick="logout()"></i>
-    </div>
-</header>
+<div class="header-module" id="includedContent"></div>
+
 <div class="main">
 
     <div class="waiting-container-ext">

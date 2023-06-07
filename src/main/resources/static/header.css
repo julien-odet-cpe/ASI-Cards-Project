@@ -1,0 +1,35 @@
+@import "home.css";
+
+.header-bar {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+    box-shadow: 0 5px 5px darkgrey;
+}
+
+.left-corner {
+    flex: 1;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.amount {
+    font-weight: bold;
+}
+
+.right-corner {
+    flex: 1;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.user-icon {
+    margin-right: 5px;
+}
+
+.sign-out-icon {
+    margin-left: 15px;
+}
